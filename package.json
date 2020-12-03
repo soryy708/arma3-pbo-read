@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "arma-class-parser": "^1.1.0",
+    "js-yaml": "^3.14.0",
+    "js2xmlparser": "^4.0.1"
+  }
+}
