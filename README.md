@@ -19,3 +19,8 @@ You can direct the output to various places, e.g. to a file via [Pipelines](http
 * xml - compact [XML](https://en.wikipedia.org/wiki/XML)
 * xmlp - pretty [XML](https://en.wikipedia.org/wiki/XML)
 * yaml - [YALM](https://en.wikipedia.org/wiki/YAML)
+
+## Common issues
+
+* Paths that contain spaces may need to either have the spaces escaped (e.g. `D:/SteamLibrary/steamapps/common/Arma\ 3/MPMissions/test.VR.pbo`) or the path enclosed in quotes (e.g. `"D:/SteamLibrary/steamapps/common/Arma 3/MPMissions/test.VR.pbo"`)
+* Windows-style directory separator (`\`) needs to be either escaped (e.g. `"D:\\SteamLibrary\\steamapps\\common\\Arma 3\\MPMissions\\test.VR.pbo"`) or replaced with Unix-style separator (`/`) (e.g. `"D:/SteamLibrary/steamapps/common/Arma 3/MPMissions/test.VR.pbo"`)
