@@ -14,9 +14,11 @@ function parsePboString(pbo) {
     if (pbo.indexOf('class EditorData') === -1) {
         throw new BinarizedPboError();
     }
-    pbo = pbo.split(/\0{16}/u)[2] || pbo.split(/\0{16}/u)[1]; // Missionfile .pbo appears to have regions split by 32 bytes of 0
-    const content = pbo.slice(pbo.indexOf('class EditorData'), pbo.lastIndexOf('};') + '};'.length);
-    const parsed = armaClassParser.parse(content);
+
+    // Inside a .pbo file there's an embedded `mission.sqm` file which we try to extract
+    const pboParts = pbo.split(/\0{16}/u)[2] || pbo.split(/\0{16}/u)[1]; // Missionfile .pbo appears to have regions split by 32 bytes of 0
+    const missionSqm = pboParts.slice(pbo.indexOf('class EditorData'), pbo.lastIndexOf('};') + '};'.length);
+    const parsed = armaClassParser.parse(missionSqm);
     return parsed;
 }
 

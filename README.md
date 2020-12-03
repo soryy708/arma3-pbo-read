@@ -1,6 +1,10 @@
 # arma3-pbo-read
 
-Usage: `node . <format> <path>`
+Reads an Arma 3 mission file PBO, extracts the `mission.sqm` file, and converts it to a non-proprietary format
+
+## Usage
+
+    node . <format> <path>
 
 This writes output to `stdout`, or `stderr` if there's an error.
 
